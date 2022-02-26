@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="702.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainFormController">
+   <children>
+      <TextArea fx:id="txtInput" focusTraversable="false" layoutX="22.0" layoutY="27.0" prefHeight="420.0" prefWidth="615.0" promptText="Enter Your Code Here" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="27.0" />
+      <TextArea fx:id="txtOutput" editable="false" focusTraversable="false" layoutX="22.0" layoutY="532.0" prefHeight="140.0" prefWidth="615.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="540.0" />
+      <HBox alignment="CENTER" layoutX="90.0" layoutY="465.0" prefHeight="50.0" prefWidth="486.0" spacing="30.0" AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#btnCompileOnAction" prefHeight="26.0" prefWidth="96.0" text="Compile" />
+            <Button mnemonicParsing="false" onAction="#btnRunOnAction" prefHeight="26.0" prefWidth="96.0" text="Run" />
+            <Button mnemonicParsing="false" onAction="#btnCompileAndRunOnAction" prefHeight="26.0" prefWidth="135.0" text="Compile &amp; Run" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
