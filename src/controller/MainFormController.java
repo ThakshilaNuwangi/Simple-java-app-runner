@@ -16,10 +16,10 @@ public class MainFormController {
     private boolean compiled = false;
     String tempDir = System.getProperty("java.io.tmpdir");
 
-    public void initialize () {
+    public void initialize() {
         txtInput.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (oldValue!=newValue) {
-                compiled=false;
+            if (oldValue != newValue) {
+                compiled = false;
             }
         });
     }
@@ -63,8 +63,6 @@ public class MainFormController {
         } catch (IOException | InterruptedException e) {
             new Alert(Alert.AlertType.ERROR, "Something went wrong, Try again");
             return false;
-        } finally {
-            System.out.println("ncdkj");
         }
     }
 
@@ -81,14 +79,13 @@ public class MainFormController {
             try {
                 Process java = Runtime.getRuntime().exec("java -cp " + tempDir + " Demo");
                 int exitCode = java.waitFor();
-                if (exitCode==0) {
+                if (exitCode == 0) {
                     readStream(java.getInputStream());
                 } else {
                     readStream(java.getErrorStream());
                 }
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
-                System.out.println("hdbs");
             } finally {
                 clearMemory(Paths.get(System.getProperty("java.io.tmpdir"), "DEP8IDEDemo.java"));
                 clearMemory(Paths.get(System.getProperty("java.io.tmpdir"), "Demo.java"));
